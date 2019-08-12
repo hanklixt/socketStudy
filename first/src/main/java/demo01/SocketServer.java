@@ -15,6 +15,7 @@ import java.net.Socket;
 @Slf4j
 public class SocketServer {
 
+    
     public static void main(String[] args) throws IOException {
         int port = 10086;
         ServerSocket server = new ServerSocket(port);

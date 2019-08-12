@@ -10,6 +10,7 @@ import java.net.Socket;
  * @author lxt
  */
 public class SocketClient {
+
     public static void main(String[] args) throws IOException {
         //要连接的服务端ip地址和端口
         String host = "127.0.0.1";
