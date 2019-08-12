@@ -1,4 +1,4 @@
-package day01;
+package demo01;
 
 import lombok.extern.slf4j.Slf4j;
 
