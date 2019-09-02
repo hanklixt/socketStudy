@@ -1,5 +1,6 @@
 package demo04;
 
+
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -38,7 +39,7 @@ public class SocketServer {
             bytes = new byte[length];
             //读到byte中去
             input.read(bytes);
-            log.info("接受到客户端的消息" + new String(bytes, "utf-8"));
+            log.info(String.format("接受到客户端的消息%s", new String(bytes, "utf-8")));
         }
         input.close();
         server.close();

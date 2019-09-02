@@ -28,12 +28,14 @@ public class SocketClient {
         message = "第二条消息";
         sendByte = message.getBytes("utf-8");
         log.info(sendByte.length + "");
+        out.write(sendByte.length>>8);
         out.write(sendByte.length);
         out.write(sendByte);
         out.flush();
         message = "第三条消息";
         sendByte = message.getBytes("utf-8");
         log.info(sendByte.length + "");
+        out.write(sendByte.length>>8);
         out.write(sendByte.length);
         out.write(sendByte);
         out.close();
