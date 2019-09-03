@@ -34,7 +34,10 @@ public class NettyServer {
         bootstrap.setPipelineFactory(new ChannelPipelineFactory() {
             public ChannelPipeline getPipeline() throws Exception {
                 final ChannelPipeline pipeline = Channels.pipeline();
+                //设置解码器，不用每次都写一样的代码
                 pipeline.addLast("decoder",new StringDecoder());
+                //设置编码器，给客户端回写数据的时候不用每次都写个ChannelBuffer
+                pipeline.addLast("encoder",new StringDecoder());
                 pipeline.addLast("ha",new HelloHandler());
                 return pipeline;
             }

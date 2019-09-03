@@ -1,8 +1,6 @@
 package demo08;
 
 import lombok.extern.slf4j.Slf4j;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.*;
 
 /**
@@ -66,10 +64,11 @@ public class HelloHandler extends SimpleChannelHandler {
       //设置管道工厂时设置了以上，可以直接取成string
         String s= (String) e.getMessage();
         log.info("接收到了消息{}",s);
-        //回写数据
-        final ChannelBuffer channelBuffer = ChannelBuffers.copiedBuffer("hello".getBytes());
+        //回写数据,不设置解码时
         //必须是ChannelBuffer对象
-        ctx.getChannel().write(channelBuffer);
+       //final ChannelBuffer channelBuffer = ChannelBuffers.copiedBuffer("hello".getBytes());
+       //ctx.getChannel().write(channelBuffer);
+        ctx.getChannel().write("hi");
         super.messageReceived(ctx, e);
     }
 
