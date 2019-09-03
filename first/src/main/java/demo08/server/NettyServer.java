@@ -1,4 +1,4 @@
-package demo08;
+package demo08.server;
 
 import lombok.extern.slf4j.Slf4j;
 import org.jboss.netty.bootstrap.ServerBootstrap;
